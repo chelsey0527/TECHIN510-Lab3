@@ -17,8 +17,24 @@ c.execute('''
 ''')
 conn.commit()
 
-# Streamlit App
 st.title("Movie List App")
+# Define toggle_watched function
+def toggle_watched(movie_id, watched_status):
+    c.execute('''
+        UPDATE movies
+        SET watched = ?
+        WHERE id = ?
+    ''', (not watched_status, movie_id))
+    conn.commit()
+
+# Define delete_movie function
+def delete_movie(movie_id):
+    c.execute('''
+        DELETE FROM movies
+        WHERE id = ?
+    ''', (movie_id,))
+    conn.commit()
+
 
 # Layout for Search and Filters
 st.subheader("Search and Filter")
