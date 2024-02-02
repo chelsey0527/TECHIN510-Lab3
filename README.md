@@ -28,10 +28,3 @@ pip install streamlit sqlite3
 ```
 streamlit run app.py
 ```
-
-### Usage
-The interface allows for:
-- Adding Movies: Fill in the movie details and submit.
-- Viewing Movies: Movies are listed with options to filter and search.
-- Updating Movies: Toggle the watched status directly from the list.
-- Deleting Movies: Remove entries you no longer wish to keep.
